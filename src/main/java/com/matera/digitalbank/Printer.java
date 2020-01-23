@@ -1,4 +1,4 @@
-package com.matera.cursoferias.gustavo.digitalbank;
+package com.matera.digitalbank;
 
 public interface Printer {
 

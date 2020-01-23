@@ -1,4 +1,4 @@
-package com.matera.cursoferias.gustavo.digitalbank;
+package com.matera.digitalbank;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.matera.cursoferias.gustavo.digitalbank;
+package com.matera.digitalbank;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
