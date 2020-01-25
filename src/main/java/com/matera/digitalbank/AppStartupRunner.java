@@ -17,14 +17,24 @@ public class AppStartupRunner implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		Cliente cliente1 = new Cliente("Gustavo", "07473955555", 123456789L, new BigDecimal("1000.00"),
-				"logradouro", 2, "complemento", "bairro", "cidade", "pr", "cep");
+		Cliente cliente1 = new Cliente(
+				"Gustavo",
+				"07473955555",
+				123456789L,
+				new BigDecimal("1000.00"),
+				"logradouro",
+				2,
+				"complemento",
+				"bairro", 
+				"cidade", 
+				"pr", 
+				"cep");
 
 		clienteRepository.save(cliente1);
 
 		Cliente cliente2 = clienteRepository.findById(cliente1.getId()).orElse(null);
 		System.out.println("2 >>> " + cliente2);
-		Cliente cliente3 = clienteRepository.buscaPorCpf("07473955555").orElse(null);
+		Cliente cliente3 = clienteRepository.findByCpf("07473955555").orElse(null);
 		System.out.println("3 >>> " + cliente3);
 		
 		clienteRepository.delete(cliente1);
