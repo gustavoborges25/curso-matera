@@ -3,13 +3,11 @@ package com.matera.digitalbank.repository;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 import com.matera.digitalbank.entity.Cliente;
 
-public interface ClienteRepository extends JpaRepository<Cliente, Long>{
+public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
-	Optional<Cliente> findByCpf(String cpf);
+    Optional<Cliente> findByCpf(String cpf);
 
 }

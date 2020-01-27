@@ -9,15 +9,17 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "db_estorno")
 public class Estorno extends EntidadeBase {
-	
+
 	@OneToOne
 	@JoinColumn(name = "id_lancamento_original", nullable = false)
 	private Lancamento lancamentoOriginal;

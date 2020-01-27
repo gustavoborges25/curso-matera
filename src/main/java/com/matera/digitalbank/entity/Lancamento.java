@@ -14,20 +14,18 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "db_lancamento")
 public class Lancamento extends EntidadeBase {
-	
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "id_conta")
-	private Conta conta;
 
-	@Column(length = 50, nullable = false)
+    @Column(length = 50, nullable = false)
 	private String codigoAutenticacao;
 
 	@Column(nullable = false)
@@ -35,11 +33,18 @@ public class Lancamento extends EntidadeBase {
 
 	@Column(precision = 20, scale = 2, nullable = false)
 	private BigDecimal valor;
-	
+
 	@Column(length = 1, nullable = false)
 	private String natureza;
-	
-	@Column(length = 50)
+
+	@Column(length = 1, nullable = false)
+	private String tipoLancamento;
+
+	@Column(length = 50, nullable = true)
 	private String descricao;
-	
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_conta")
+	private Conta conta;
+
 }

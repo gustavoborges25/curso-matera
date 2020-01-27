@@ -18,18 +18,14 @@ import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-@SuperBuilder
 @Entity
 @Table(name = "db_conta")
 public class Conta extends EntidadeBase {
-	
-	@OneToOne
-	@JoinColumn(name = "id_cliente", nullable = false)
-	private Cliente cliente;
 
-	@Column(precision = 4, nullable = false)
+    @Column(precision = 4, nullable = false)
 	private Integer numeroAgencia;
 
 	@Column(precision = 12, nullable = false)
@@ -39,9 +35,13 @@ public class Conta extends EntidadeBase {
 	private BigDecimal saldo;
 
 	@Column(length = 1, nullable = false)
-	private String situacao;
+    private String situacao;
+
+	@OneToOne
+	@JoinColumn(name = "id_cliente", nullable = false)
+	private Cliente cliente;
 
 	@OneToMany(mappedBy = "conta")
 	private List<Lancamento> lancamentos;
-		
+
 }

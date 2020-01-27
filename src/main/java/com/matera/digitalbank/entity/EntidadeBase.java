@@ -19,8 +19,8 @@ import lombok.experimental.SuperBuilder;
 @MappedSuperclass
 public class EntidadeBase {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
 }
