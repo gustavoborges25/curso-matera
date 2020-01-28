@@ -74,8 +74,8 @@ public class LancamentoService {
 		return comprovantesResponseDTO;
 	}
 
-	public List<ComprovanteResponseDTO> consultaExtratoPorPeriodo(LocalDate dataInicial, LocalDate dataFinal) {
-		List<Lancamento> lancamentos = lancamentoRepository.consultaLancamentosPorPeriodo(dataInicial, dataFinal);
+	public List<ComprovanteResponseDTO> consultaExtratoPorPeriodo(Long idConta, LocalDate dataInicial, LocalDate dataFinal) {
+		List<Lancamento> lancamentos = lancamentoRepository.consultaLancamentosPorPeriodo(idConta, dataInicial, dataFinal);
 
 		List<ComprovanteResponseDTO> comprovantesResponseDTO = new ArrayList<>();
 		lancamentos.forEach(l -> comprovantesResponseDTO.add(entidadeParaComprovanteResponseDTO(l)));

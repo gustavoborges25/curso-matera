@@ -92,7 +92,7 @@ public class ContaService {
 	public ExtratoResponseDTO consultaExtratoPorPeriodo(Long id, LocalDate dataInicial, LocalDate dataFinal) {
 		Conta conta = findById(id);
 
-		List<ComprovanteResponseDTO> comprovantesResponseDTO = lancamentoService.consultaExtratoPorPeriodo(dataInicial, dataFinal);
+		List<ComprovanteResponseDTO> comprovantesResponseDTO = lancamentoService.consultaExtratoPorPeriodo(conta.getId(), dataInicial, dataFinal);
 
 		ExtratoResponseDTO extratoResponseDTO = new ExtratoResponseDTO();
 		extratoResponseDTO.setConta(entidadeParaResponseDTO(conta));
